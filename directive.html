@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Mon Application Vue.js</title>
+  </head>
+  <body>
+
+
+<div id="app">
+    <p>Si (if) l'utilisateur a les autorisations par défaut, afficher ce qui suit </p>
+    <section v-if="userPermission === 'default'">...</section>
+    <p>Sinon et si l'utilisateur a les autorisations administrateur, afficher ce qui suit </p>
+    <section v-else-if="userPermission === 'admin'">...</section>
+    <p>Si l'utilisateur n'a aucune autorisation afficher ce qui suit </p>
+    <section v-else>... du texte aussi</section>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+            userPermission : 'admin',
+            showModal: false
+        }
+      })
+  </script>
+  </body>
+</html>
